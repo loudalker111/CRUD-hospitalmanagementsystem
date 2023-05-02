@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">Hospital Management</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+      <div class="navbar-nav ">
+        <a class="nav-link" routerLink="createDoctor" routerLinkActive="active">Create Doctor</a>
+        <a class="nav-link" routerLink="createPatient" routerLinkActive="active">Create Patient</a>
+        <a class="nav-link" routerLink="doctors" routerLinkActive="active">Show Doctor Information</a>
+        <a class="nav-link" routerLink="patients" routerLinkActive="active">Show PatientInformation</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container minimumFooterSpace">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="text-center text-lg-start text-dark" style="background-color: #ECEFF1">
+  <div class="text-center p-3 bg-primary text-white ">
+    © 2023 Copyright: Bechir BenOthman & Saif Smida
+  </div>
+</footer>

@@ -1,0 +1,36 @@
+<h2 class="text-center py-4">Patients List</h2>
+
+<div class="container py-5 px-5">
+  <form class="d-flex" (ngSubmit)="onSearch()">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchText" name="searchText">
+    <button class="btn btn-outline-success" (click)="onSearch()" type="submit">Search</button>
+  </form>
+
+</div>
+<div *ngIf="size == 0; else elseBlock">
+  <div class="alert alert-primary text-center" role="alert">
+    No Data Found!
+  </div>
+</div>
+<ng-template #elseBlock>
+  <table class="table table-striped table-hover ">
+    <thead>
+      <tr class="text-center">
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Visited Doctor</th>
+        <th scope="col">Date Of Visit</th>
+        <th scope="col">Prescription</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr *ngFor="let patient of patients">
+        <th>{{patient.id}}</th>
+        <td>{{patient.name}}</td>
+        <td>{{patient.visitedDoctor}}</td>
+        <td>{{patient.dateOfVisit}}</td>
+        <td>{{patient.prescription}}</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>

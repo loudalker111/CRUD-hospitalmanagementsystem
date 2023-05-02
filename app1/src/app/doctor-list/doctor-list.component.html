@@ -1,0 +1,42 @@
+<h2 class="text-center py-4">Doctors List</h2>
+
+
+<div class="container py-5 px-5">
+  <h5>Select Doctor</h5>
+  <form class="d-flex" (ngSubmit)="onSelect()">
+    <select class="form-select " aria-label="Select Doctor" [(ngModel)]="selectId" name="selectId">
+      <option selected>Select Doctor</option>
+      <option *ngFor="let doctor of doctors" value={{doctor.id}}>{{doctor.name}}</option>
+    </select>
+    <button class="btn btn-outline-success mx-5" (click)="onSelect()" type="submit">Select</button>
+  </form>
+
+</div>
+
+<div *ngIf="size == 0; else elseBlock">
+  <div class="alert alert-primary text-center" role="alert">
+    No Data Found!
+  </div>
+</div>
+<ng-template #elseBlock>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr class="text-center">
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Specialist Fields</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr *ngFor="let doctor of results">
+        <th>{{doctor.id}}</th>
+        <td>{{doctor.name}}</td>
+        <td>{{doctor.age}}</td>
+        <td>{{doctor.gender}}</td>
+        <td>{{doctor.specialistFields}}</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>
