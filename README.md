@@ -1,1 +1,1 @@
-# CRUD-hospitalmanagementsystem
+# hospitalmanagementsystem
